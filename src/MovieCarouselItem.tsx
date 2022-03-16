@@ -1,5 +1,5 @@
 import React from 'react';
-import {ImageBackground, StyleSheet, View} from 'react-native';
+import {ImageBackground, Pressable, StyleSheet, View} from 'react-native';
 import ICarouselItem from './ICarouselItem';
 import Movie from './Movie';
 
@@ -39,9 +39,9 @@ export default class MovieCarouselItem implements ICarouselItem {
 
   getItemView(): JSX.Element {
     return (
-      <View
+      <Pressable
         style={this.styles.container}
-        onStartShouldSetResponder={() => {
+        onPress={() => {
           this.callback(this.movie);
           return true;
         }}>
@@ -49,7 +49,7 @@ export default class MovieCarouselItem implements ICarouselItem {
           resizeMode="cover"
           source={{uri: this.movie.imageUrl}}
           style={this.styles.image}></ImageBackground>
-      </View>
+      </Pressable>
     );
   }
 }

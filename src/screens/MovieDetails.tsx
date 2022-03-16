@@ -1,3 +1,4 @@
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import React, {Component} from 'react';
 import {ImageBackground, SafeAreaView, StyleSheet, Text} from 'react-native';
 import Movie from '../Movie';
@@ -6,15 +7,16 @@ export type MovieDetailsProps = {
   movie: Movie;
 };
 
-export default class MovieDetails extends Component<MovieDetailsProps> {
+type Props = NativeStackScreenProps<MovieDetailsProps>;
+export default class MovieDetails extends Component<Props> {
   render() {
     return (
       <SafeAreaView style={Styles.container}>
         <ImageBackground
           resizeMode="cover"
-          source={{uri: this.props.movie.imageUrl}}
+          source={{uri: this.props.route.params.movie.imageUrl}}
           style={Styles.image}></ImageBackground>
-        <Text>{this.props.movie.title}</Text>
+        <Text>{this.props.route.params.movie.title}</Text>
       </SafeAreaView>
     );
   }
