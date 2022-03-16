@@ -1,13 +1,14 @@
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import React, {Component} from 'react';
 import {ImageBackground, SafeAreaView, StyleSheet, Text} from 'react-native';
+import {StackParams} from '../App';
 import Movie from '../Movie';
 
 export type MovieDetailsProps = {
   movie: Movie;
 };
 
-type Props = NativeStackScreenProps<MovieDetailsProps>;
+type Props = NativeStackScreenProps<StackParams, 'MovieDetails'>;
 export default class MovieDetails extends Component<Props> {
   render() {
     return (
