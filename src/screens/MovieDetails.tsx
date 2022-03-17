@@ -68,7 +68,7 @@ export default class MovieDetails extends Component<Props> {
                 <TouchableOpacity
                   style={Styles.button}
                   onPress={() => {
-                    this.props.navigation.navigate('YouTubePlayer', {
+                    this.props.navigation.navigate('YouTube Player', {
                       videoId: video.key,
                     });
                   }}>
