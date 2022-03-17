@@ -9,6 +9,8 @@ const baseURL = 'https://api.themoviedb.org/3';
 
 const imageBaseURL = `https://image.tmdb.org/t/p/w500`;
 
+const defaultLanguage = 'en_US';
+
 type PaginatedMovies = {
   page: Number;
   results: any[];
@@ -64,7 +66,41 @@ function extractMovies(pages: PaginatedMovies): Movie[] {
       title: movie.title as string,
       id: movie.id as Number,
       imageUrl: `${imageBaseURL}${movie.poster_path}`,
+      description: movie.overview,
+      releaseDate: new Date(movie.release_date),
     });
   });
   return result;
+}
+
+type VideosResponse = {
+  id: string;
+  results: VideoItem[];
+};
+
+export type VideoItem = {
+  iso_639_1: string;
+  iso_3166_1: string;
+  name: string;
+  key: string;
+  site: string;
+  size: Number;
+  type: string;
+  official: boolean;
+  published_at: Date;
+  id: string;
+};
+
+export async function getVideos(movieId: string): Promise<VideoItem[]> {
+  const url = `${baseURL}/movie/${movieId}/videos?language=${defaultLanguage}`;
+  try {
+    let res = await axios.get(url, config);
+    if (res != undefined && res.status == 200) {
+      const videoResponse: VideosResponse = res.data;
+      return videoResponse?.results ?? [];
+    }
+  } catch (e) {
+    console.log(`Error while fetching movie videos: ${e}`);
+  }
+  return [];
 }

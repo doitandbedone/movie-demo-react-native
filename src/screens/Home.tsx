@@ -24,10 +24,10 @@ const Home = () => {
   const [movieMap, setMovieMap] = useState(new Map<string, ICarouselItem[]>());
 
   const navigator =
-    useNavigation<NativeStackNavigationProp<StackParams, 'MovieDetails'>>();
+    useNavigation<NativeStackNavigationProp<StackParams, 'Movie Details'>>();
 
   const OnItemClicked: OnItemClicked = (movie: Movie) => {
-    navigator?.navigate('MovieDetails', {movie: movie});
+    navigator?.navigate('Movie Details', {movie: movie});
   };
 
   const getMovies = async () => {
@@ -59,7 +59,7 @@ const Home = () => {
 
   useEffect(() => {
     getMovies();
-  });
+  }, []);
 
   return (
     <SafeAreaView style={Styles.container}>
