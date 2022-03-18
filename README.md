@@ -20,6 +20,9 @@ This is just a demo project created to experiment and get familiar with react na
 }
 ```
 4. You may now run on ios or android.
+
+For more in depth explanation of the code, please [follow the blog post](https://blog.doitandbedone.com/blog/react-native-typescript-movie-mobile-demo-app/).
+
 ## Credits:
 [The Movie DB](https://www.themoviedb.org/)  
 [React Native Youtube-iframe](https://lonelycpp.github.io/react-native-youtube-iframe/)  
