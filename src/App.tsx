@@ -38,7 +38,7 @@ const App = () => {
         <Stack.Navigator
           initialRouteName="Home"
           screenOptions={{headerShown: true}}>
-          <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="Home" options={{title: "Movie Catalog"}} component={Home} />
           <Stack.Screen name="MovieDetails" options={{title: "Movie Details"}} component={MovieDetails} />
           <Stack.Screen name="YouTubePlayer" options={{title: "Player"}} component={YouTubePlayer} />
         </Stack.Navigator>
