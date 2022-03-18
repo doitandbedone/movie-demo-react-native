@@ -3,7 +3,7 @@ import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import React, {Component, useEffect, useState} from 'react';
 import {ActivityIndicator, StyleSheet, Text} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import {StackParams} from '../App';
+import {StackParams} from '../../App';
 import ICarouselItem from '../ICarouselItem';
 import Movie from '../Movie';
 import MovieCarouselItem, {OnItemClicked} from '../MovieCarouselItem';

@@ -13,7 +13,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import {StackParams} from '../App';
+import {StackParams} from '../../App';
 import Separator from '../components/Separator';
 import Movie from '../Movie';
 import {getVideos, VideoItem} from '../MovieCatalog';

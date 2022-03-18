@@ -1,7 +1,7 @@
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import React, {useCallback, useEffect, useState, useRef} from 'react';
 import YoutubePlayer, {YoutubeIframeRef} from 'react-native-youtube-iframe';
-import {StackParams} from '../App';
+import {StackParams} from '../../App';
 import * as config from '../../config';
 import {Alert, BackHandler} from 'react-native';
 
