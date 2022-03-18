@@ -66,6 +66,7 @@ export default class MovieDetails extends Component<Props> {
               .filter(v => v.type == 'Trailer')
               .map(video => (
                 <TouchableOpacity
+                key={video.id}
                   style={Styles.button}
                   onPress={() => {
                     this.props.navigation.navigate('YouTube Player', {
