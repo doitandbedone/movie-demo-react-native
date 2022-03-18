@@ -1,4 +1,4 @@
-# Movie Catalog - (React Native)
+# Movie Catalog - (React Native - TypeScript)
 This project accesses a movie database and displays movies. Includes navigation to their respective description 
 screens and allows to play available trailers.
 
