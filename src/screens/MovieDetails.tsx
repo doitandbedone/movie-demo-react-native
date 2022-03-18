@@ -43,7 +43,7 @@ export default class MovieDetails extends Component<Props> {
     ) : (
       <SafeAreaView style={Styles.container}>
         <ScrollView>
-          <Text style={Styles.title}>
+          <Text adjustsFontSizeToFit style={Styles.title}>
             {this.movie.title} (
             {this.movie.releaseDate.getFullYear().toString()})
           </Text>
