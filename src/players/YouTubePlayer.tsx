@@ -11,7 +11,7 @@ export type YouTubePlayerProps = {
   videoId: string;
 };
 
-type Props = NativeStackScreenProps<StackParams, 'YouTube Player'>;
+type Props = NativeStackScreenProps<StackParams, 'YouTubePlayer'>;
 
 const YouTubePlayer = (props: Props) => {
   const playerRef = useRef<YoutubeIframeRef>(null);

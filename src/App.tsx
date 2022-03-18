@@ -22,8 +22,8 @@ const Stack = createNativeStackNavigator<StackParams>();
 
 export type StackParams = {
   Home: undefined;
-  'Movie Details': MovieDetailsProps;
-  'YouTube Player': YouTubePlayerProps;
+  MovieDetails: MovieDetailsProps;
+  YouTubePlayer: YouTubePlayerProps;
 };
 
 const App = () => {
@@ -39,8 +39,8 @@ const App = () => {
           initialRouteName="Home"
           screenOptions={{headerShown: true}}>
           <Stack.Screen name="Home" component={Home} />
-          <Stack.Screen name="Movie Details" component={MovieDetails} />
-          <Stack.Screen name="YouTube Player" component={YouTubePlayer} />
+          <Stack.Screen name="MovieDetails" options={{title: "Movie Details"}} component={MovieDetails} />
+          <Stack.Screen name="YouTubePlayer" options={{title: "Player"}} component={YouTubePlayer} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>

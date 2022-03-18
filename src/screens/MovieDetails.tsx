@@ -22,7 +22,7 @@ export type MovieDetailsProps = {
   movie: Movie;
 };
 
-type Props = NativeStackScreenProps<StackParams, 'Movie Details'>;
+type Props = NativeStackScreenProps<StackParams, 'MovieDetails'>;
 
 type State = {
   isLoading: boolean;
@@ -77,7 +77,7 @@ export default class MovieDetails extends Component<Props> {
                   key={video.id}
                   style={Styles.button}
                   onPress={() => {
-                    this.props.navigation.navigate('YouTube Player', {
+                    this.props.navigation.navigate('YouTubePlayer', {
                       videoId: video.key,
                     });
                   }}>

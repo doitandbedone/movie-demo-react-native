@@ -24,10 +24,10 @@ const Home = () => {
   const [movieMap, setMovieMap] = useState(new Map<string, ICarouselItem[]>());
 
   const navigator =
-    useNavigation<NativeStackNavigationProp<StackParams, 'Movie Details'>>();
+    useNavigation<NativeStackNavigationProp<StackParams, 'MovieDetails'>>();
 
   const OnItemClicked: OnItemClicked = (movie: Movie) => {
-    navigator?.navigate('Movie Details', {movie: movie});
+    navigator?.navigate('MovieDetails', {movie: movie});
   };
 
   const getMovies = async () => {
