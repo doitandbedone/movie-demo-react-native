@@ -1,6 +1,6 @@
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import React, {Component} from 'react';
-import { LogBox } from 'react-native';
+import {LogBox} from 'react-native';
 import {
   ActivityIndicator,
   Button,
@@ -37,7 +37,7 @@ export default class MovieDetails extends Component<Props> {
   render() {
     LogBox.ignoreLogs([
       'Non-serializable values were found in the navigation state',
-     ]);
+    ]);
     return this.state.isLoading ? (
       <ActivityIndicator style={{flex: 1, alignContent: 'center'}} />
     ) : (
@@ -64,9 +64,17 @@ export default class MovieDetails extends Component<Props> {
             <Text style={{fontWeight: 'bold', fontSize: 16}}>Trailers</Text>
             {this.state.videos
               .filter(v => v.type == 'Trailer')
+              .sort((videoA, videoB) => {
+                if (videoA.name > videoB.name) {
+                  return 1;
+                } else if (videoA.name < videoB.name) {
+                  return -1;
+                }
+                return 0;
+              })
               .map(video => (
                 <TouchableOpacity
-                key={video.id}
+                  key={video.id}
                   style={Styles.button}
                   onPress={() => {
                     this.props.navigation.navigate('YouTube Player', {
